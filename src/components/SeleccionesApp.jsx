@@ -6,8 +6,23 @@ import './stylesheet/SeleccionesApp.css'
 
 
 export const SeleccionesApp = () => {
-    const [typeOfView, settypeOfView] = useState('')
+
+  const [typeOfView, settypeOfView] = useState('')
   const [typeHistory, setTypeHistory] = useState('')
+
+
+  const show = () => {
+    if(typeHistory !== ''){
+      return ''
+    } else {
+        return (
+          <div className={`SeleccionesApp`}>
+          <Modal selectView={selectView} showModal={typeOfView}/>
+          <SeleccionDeHistoria selectHistory={selectHistory} typeSelect={selectView} showModal={typeOfView}/>
+        </div>
+        )
+    }
+  }
 
   const selectHistory = (val) => {
     setTypeHistory(val)
@@ -21,16 +36,12 @@ export const SeleccionesApp = () => {
   
   
     return (
-    
-    <div className={`SeleccionesApp ${typeHistory !== '' && 'oculto'}`}>
+    <>
+      {
+        show()
+      }
+        
+    </>
 
-
-    <Modal selectView={selectView} showModal={typeOfView}/>
-    <SeleccionDeHistoria selectHistory={selectHistory} typeSelect={selectView} showModal={typeOfView}/>
-    
-
-
-    
-  </div>
   )
 }
