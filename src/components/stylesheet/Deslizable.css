@@ -16,6 +16,6 @@
   filter: blur(20px)
 }
 
-.noblurer:hover {
+.noblurer:hover,.noblurer:active {
   filter: none !important;
 }

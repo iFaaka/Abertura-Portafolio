@@ -1,6 +1,8 @@
 import React from 'react'
 import { Deslizable } from './Deslizable';
 import './stylesheet/SeleccionDeHistoria.css'
+import './stylesheet/Mobile/SeleccionDeHistoria.css'
+
 
 export const SeleccionDeHistoria = ({ showModal,selectView,selectHistory }) => {
   return (
@@ -12,7 +14,8 @@ export const SeleccionDeHistoria = ({ showModal,selectView,selectHistory }) => {
         url={'hey'}
         texto={'Quiero hacer el recorrido completo'}
         id={'historiaLarga'}
-        selectHistory={selectHistory}/>
+        selectHistory={selectHistory}
+        />
 
 
 
